@@ -78,24 +78,25 @@ const palindromeArr = ["A man, a plan, a canal, Panama!", "Amor, Roma", "race ca
 
 palindromeArr.forEach(phrase => {
   
-  let lowerCase = phrase.toLowerCase();
-  let split = lowerCase.split("");
-  
-  let onlyLetters = [];
-  
-  split.forEach(item => {
-    if (item.match(/[A-z]/gi)) onlyLetters.push(item);
-  });
-  
-  phraseToCheck = [...onlyLetters];
-  phraseToCheck.reverse();
+    let lowerCase = phrase.toLowerCase();
+    
+    let onlyLetters = "";
 
-  let a = onlyLetters.join("");
-  let b = phraseToCheck.join("");
-  
-  if (a == b) {
-    console.log(`It's a Palindrome!!`)
-  } else console.log(`Sorry, but not a Palindrome`)
+    let reversePhrase = "";
+
+    for (let i = 0; i < lowerCase.length ; i++) {
+        if (lowerCase[i].match(/[A-z]/gi)) {
+            onlyLetters += `${lowerCase[i]}` 
+        }
+    }
+
+    for (let i = onlyLetters.length-1; i >= 0 ; i--) {
+        reversePhrase += `${onlyLetters[i]}` 
+    }
+
+    if (onlyLetters == reversePhrase) {
+        console.log(`It's a Palindrome!!`)
+    } else console.log(`Sorry, but not a Palindrome`)
   
 })
 
