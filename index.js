@@ -58,7 +58,7 @@ const longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed d
 
 const longArr = longText.split(" ");
 
-console.log(longArr.length);
+console.log(`The number of words on the paragraphs is ${longArr.length}`);
 
 let count = 0;
 
@@ -66,7 +66,7 @@ longArr.forEach(item => {
   if (item === 'et') count += 1
 });
 
-console.log(count);
+console.log(`The number of times "et" is on the paragraphs is ${count}`);
 
 //Bonus 2
 
